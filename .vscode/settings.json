@@ -1,0 +1,12 @@
+{
+    "code-runner.clearPreviousOutput": true,
+    "code-runner.runInTerminal": true,
+    "code-runner.saveAllFilesBeforeRun": true,
+    "code-runner.saveFileBeforeRun": true,
+    "python.pythonPath": "/Users/johnanthonyjose/anaconda3/envs/lbyec2a/bin/python",
+    "files.exclude": {
+        ".gitignore": true,
+        ".vscode": true,
+        "tests/": true
+    }
+}

@@ -32,8 +32,12 @@ void getNumbers(int *arr_numbers, int size)
 bool isPerfectSquare(int x)
 {
     //Write your code below
-
-    return true; //You can edit this line
+    float check = sqrt(x);
+    int checker = check;
+    if (check == checker)
+		return true;
+	else
+		return false;
 }
 
 /*Generates the appropriate tags for each element of the array numbers
@@ -56,7 +60,10 @@ bool isPerfectSquare(int x)
 void generateTags(int *numbers, bool *tags, int size)
 {
     //Write your code below
-
+    for (int i = 0; i < size; i++){
+    	if(isPerfectSquare(*(numbers + i))) *(tags + i) = true; 
+		else *(tags + i) = false;
+	}
     return;
 }
 
@@ -77,8 +84,11 @@ void generateTags(int *numbers, bool *tags, int size)
 int calculateSum(int *arr, bool *tags, int size)
 {
     //Write your code below
-
-    return 0; //You can edit this line.
+	int sum = 0;
+	for (int i = 0; i<size; i++){
+		if (*(tags + i)) sum += *(arr + i);
+	}
+    return sum; //You can edit this line.
 }
 
 /*  Display the elements of the array as long as the element is tagged as true
@@ -103,13 +113,17 @@ int calculateSum(int *arr, bool *tags, int size)
 void displayResult(int *arr, bool *tags, int size, int sum)
 {
     //Write your code below
-
+	printf("The perfect squares are: ");
+	for (int i = 0; i<size; i++){
+		if (*(tags + i)) printf("%d ",*(arr + i));
+	}
+	printf("\nsum = %d",sum);
     return;
 }
 
 int main(void)
 {
-    int *arr_number;
+    int i, *arr_number;
     bool *tags;
     int N = -1;
     int sum = 0;
@@ -126,7 +140,10 @@ int main(void)
     tags = (bool *)malloc(N * sizeof(bool));
 
     //BEGIN WRITE CODE HERE
-
+	getNumbers(arr_number,N);
+	generateTags(arr_number,tags,N);
+	sum = calculateSum(arr_number,tags,N);
+    displayResult(arr_number,tags,N,sum);
     //END CODE
 
     //Although it's already being done automatically when you exit the main function,

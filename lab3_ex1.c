@@ -16,7 +16,7 @@ void getNumbers(int *arr_numbers, int size)
     printf("Enter number(s): ");
     for (i = 0; i < size; i++)
     {
-        scanf("%d", arr_numbers + i);
+        scanf("%d", arr_numbers + i);	//scans each number separated by white space and stores each number in arr_numbers
     }
 }
 
@@ -88,7 +88,7 @@ int calculateSum(int *arr, bool *tags, int size)
 	for (int i = 0; i<size; i++){		//if the content of (tags + i) is true, the content of (arr + i) is added to current value of sum
 		if (*(tags + i)) sum += *(arr + i);
 	}
-    return sum; 
+    return sum; 				//sum is returned to int main
 }
 
 /*  Display the elements of the array as long as the element is tagged as true
@@ -114,11 +114,11 @@ void displayResult(int *arr, bool *tags, int size, int sum)
 {
     //Write your code below
 	printf("The perfect squares are:");
-	for (int i = 0; i<size; i++){
+	for (int i = 0; i<size; i++){		//prints out the perfect squares depending on the boolean value inside pointer (tags + i)
 		if (*(tags + i)) printf(" %d",*(arr + i));
 	}
 	printf("\n");
-	printf("sum = %d",sum);
+	printf("sum = %d",sum);			
     return;
 }
 
@@ -143,8 +143,8 @@ int main(void)
     //BEGIN WRITE CODE HERE
 	getNumbers(arr_number,N);
 	generateTags(arr_number,tags,N);
-	sum = calculateSum(arr_number,tags,N);
-    displayResult(arr_number,tags,N,sum);
+	sum = calculateSum(arr_number,tags,N);	//upon returning from the function, the sum is assigned to variable sum
+    	displayResult(arr_number,tags,N,sum);
     //END CODE
 
     //Although it's already being done automatically when you exit the main function,

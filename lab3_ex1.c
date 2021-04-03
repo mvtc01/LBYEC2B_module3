@@ -117,7 +117,8 @@ void displayResult(int *arr, bool *tags, int size, int sum)
 	for (int i = 0; i<size; i++){
 		if (*(tags + i)) printf("%d ",*(arr + i));
 	}
-	printf("\nsum = %d",sum);
+	printf("\n");
+	printf("sum = %d",sum);
     return;
 }
 

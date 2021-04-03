@@ -34,9 +34,9 @@ bool isPerfectSquare(int x)
     //Write your code below
     float check = sqrt(x);
     int checker = check;
-    if (check == checker)
+    if (check == checker)	//checks whether sqrt of x is a whole number
 		return true;
-	else
+	else			//then sqrt of x is not a whole number, thus x is not a perfect square
 		return false;
 }
 
@@ -60,9 +60,9 @@ bool isPerfectSquare(int x)
 void generateTags(int *numbers, bool *tags, int size)
 {
     //Write your code below
-    for (int i = 0; i < size; i++){
+    for (int i = 0; i < size; i++){			//stores the boolean result in pointer tags
     	if(isPerfectSquare(*(numbers + i))) *(tags + i) = true; 
-		else *(tags + i) = false;
+		else *(tags + i) = false;	
 	}
     return;
 }
@@ -85,10 +85,10 @@ int calculateSum(int *arr, bool *tags, int size)
 {
     //Write your code below
 	int sum = 0;
-	for (int i = 0; i<size; i++){
+	for (int i = 0; i<size; i++){		//if the content of (tags + i) is true, the content of (arr + i) is added to current value of sum
 		if (*(tags + i)) sum += *(arr + i);
 	}
-    return sum; //You can edit this line.
+    return sum; 
 }
 
 /*  Display the elements of the array as long as the element is tagged as true

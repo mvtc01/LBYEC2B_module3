@@ -113,9 +113,9 @@ int calculateSum(int *arr, bool *tags, int size)
 void displayResult(int *arr, bool *tags, int size, int sum)
 {
     //Write your code below
-	printf("The perfect squares are: ");
+	printf("The perfect squares are:");
 	for (int i = 0; i<size; i++){
-		if (*(tags + i)) printf("%d ",*(arr + i));
+		if (*(tags + i)) printf(" %d",*(arr + i));
 	}
 	printf("\n");
 	printf("sum = %d",sum);
